@@ -7,6 +7,15 @@ export default {
   fishes: [],
   bound: screen.clone(),
 
+  createText() {
+    const text = new PIXI.BitmapText('Hello Bitmap Font', {
+      fontName: 'vulf-mono',
+    })
+    text.position.x = 20
+    text.position.y = 20
+    this.container.addChild(text)
+  },
+
   init() {
     this.container = new PIXI.Container()
     /* 湖底 */
@@ -41,6 +50,8 @@ export default {
       this.overlay,
       this.bed
     )
+
+      this.createText()
 
     this.bound.pad(100)
   },
